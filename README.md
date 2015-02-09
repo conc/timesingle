@@ -1,16 +1,16 @@
-# timesingle
-
-How to use:
+timesingle
+==== 
+#How to use:
 
 go get github.com/conc/timesingle
 
-Import:
+#Import:
 
 import github.com/conc/timesingle
 
-Examples:
+#Examples:
 
-
+```golang
 package main
 
 import(
@@ -32,3 +32,4 @@ func main() {
 
 	return
 }
+```
