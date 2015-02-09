@@ -2,7 +2,7 @@ package main
 
 import(
 	"log"
-	"./timesingle"
+	"github.com/conc/timesingle"
 )
 
 func main() {
