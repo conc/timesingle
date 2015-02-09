@@ -41,7 +41,7 @@ func (p *TimeSignal) beginDeal() {
 		if diffSecond < 0 {
 			diffSecond += 24 * 60 * 60
 		}
-	} else {
+	} else if (p.WeekDay > 0) && (p.WeekDay < 8) {
 		diffWeek := p.WeekDay - getWeedOfToday()
 		if diffWeek < 0 {
 			diffWeek += 7
@@ -50,6 +50,8 @@ func (p *TimeSignal) beginDeal() {
 		if diffSecond < 0 {
 			diffSecond += 7 * 24 * 60 * 60
 		}
+	} else {
+		panic(errors.New("error time weedday"))
 	}
 
 	time.Sleep(time.Duration(diffSecond) * time.Second)
@@ -95,15 +97,15 @@ func getSecondOfToday(timeStr string) (int64, error) {
 	}
 
 	aimHour, err := strconv.ParseInt(spitArray[0], 10, 64)
-	if err != nil || aimHour < 0 || aimHour > 24 {
+	if err != nil || aimHour < 0 || aimHour > 23 {
 		return 0, errors.New("error time string")
 	}
 	aimMinute, err := strconv.ParseInt(spitArray[1], 10, 64)
-	if err != nil || aimMinute < 0 || aimMinute > 60 {
+	if err != nil || aimMinute < 0 || aimMinute > 59 {
 		return 0, errors.New("error time string")
 	}
 	aimSecond, err := strconv.ParseInt(spitArray[2], 10, 64)
-	if err != nil || aimSecond < 0 || aimSecond > 60 {
+	if err != nil || aimSecond < 0 || aimSecond > 59 {
 		return 0, errors.New("error time string")
 	}
 	aim := aimHour*3600 + aimMinute*60 + aimSecond
