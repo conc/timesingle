@@ -1,12 +1,14 @@
 # timesingle
 
-How to use
+How to use:
+
 go get github.com/conc/timesingle
 
-Import
+Import:
+
 import github.com/conc/timesingle
 
-Examples
+Examples:
 
 package main
 
