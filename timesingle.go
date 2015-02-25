@@ -20,7 +20,7 @@ type TimeSignal struct {
 	Ch                 chan int
 }
 
-func NewTTimeSignal() *TimeSignal {
+func NewTimeSignal() *TimeSignal {
 	var result TimeSignal
 	result.Ch = make(chan int)
 	return &result

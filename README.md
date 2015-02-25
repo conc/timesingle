@@ -19,7 +19,7 @@ import(
 )
 
 func main() {
-	timeSingle := timesingle.NewTTimeSignal()
+	timeSingle := timesingle.NewTimeSignal()
 	timeSingle.WeekDay = 4
 	timeSingle.TimeStr = "17:52:10"
 	timeSingle.TimeTntervalSecond = 1
